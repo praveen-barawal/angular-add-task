@@ -1,6 +1,6 @@
-import { Component, Input } from "@angular/core";
-import { trigger, transition, animate, style } from "@angular/animations";
+import { Component, Input, OnInit, ViewChild } from "@angular/core";
 import { angularAnimation } from "../Animation/animation";
+import Typewriter from 't-writer.js';
 
 @Component({
   selector: "switch",
@@ -10,36 +10,25 @@ import { angularAnimation } from "../Animation/animation";
 export class SwitchComponent {
   @Input() isChecked: boolean;
   @Input() className: string;
+  @ViewChild("tw") typewriterElement;
+  @ViewChild("tw2") typewriterElement2;
+  @ViewChild("tw3") typewriterElement3;
 
-  showProgress: boolean = false;
-  showText: string = "Devices Off";
-  canShowWarn: boolean = true;
-  canShowPrimary: boolean = false;
-  colorClass: string = "warn";
-  spinnerClass: string = "mat-off-progress";
-  isShowLoader: boolean = false;
+  show = true;
+  hideLabel = false;
 
-  showTextAndLoader(showText: string) {
-    setTimeout(() => {
-      this.showText = showText;
-      this.showProgress = false;
-      this.isShowLoader = false;
-    }, 1500);
-  }
+  ngOnInit() {
+    setTimeout(() => (this.hideLabel = true), 1000);
 
-  onClick() {
-    this.showProgress = true;
-    this.colorClass = "progress";
-    this.isShowLoader = true;
-    this.showText = "Please Wait...";
-    if (this.isChecked) {
-      this.colorClass = "primary";
-      this.spinnerClass = "mat-on-progress";
-      this.showTextAndLoader("Devices On");
-    } else {
-      this.colorClass = "warn";
-      this.spinnerClass = "mat-off-progress";
-      this.showTextAndLoader("Devices Off");
-    }
+    const target = this.typewriterElement.nativeElement;
+    const writer = new Typewriter(target, {
+      loop: false,
+      typeColor: "#5d5581"
+    });
+
+    writer
+      .type(`Make animation`)
+      .rest(500)
+      .start();
   }
 }
