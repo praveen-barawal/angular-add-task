@@ -1,11 +1,11 @@
 import { Component, Input, OnInit, ViewChild } from "@angular/core";
-import { angularAnimation } from "../Animation/animation";
 import Typewriter from 't-writer.js';
+import { AngularAnimation } from "../animation/animation";
 
 @Component({
   selector: "add-task",
   templateUrl: "./add-task.component.html",
-  animations: [angularAnimation]
+  animations: [AngularAnimation]
 })
 export class AddTaskComponent {
   @Input() isChecked: boolean;
