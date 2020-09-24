@@ -1,0 +1,86 @@
+/* Add application styles & imports to this file! */
+$myFont: 'Poppins', sans-serif;
+$textGrey: #a5a1b4;
+$textPurple:#5d5581;
+
+.hp {
+  opacity : 0;
+  display:none;
+  color:#5d5581;
+  font-family: $myFont;
+}
+.lp{
+  color:#5d5581;
+  font-family: $myFont;
+}
+.main-wrapper{
+  position:absolute;
+  width:99%;
+  text-align:center;
+  margin:0 auto;
+  top:45%;
+}
+.main-wrapper h1{
+  width:100%;
+}
+.strike{
+  text-decoration: line-through;
+}
+.box-purple{
+  width:13px;
+  height:13px;
+  border:3px solid $textPurple;
+  border-radius:4px;
+  display:inline-block;
+  padding: 5px;
+  margin-right: 20px;
+  color:$textPurple;
+}
+.box {
+  width:13px;
+  height:13px;
+  border:3px solid $textGrey;
+  border-radius:4px;
+  display:inline-block;
+  padding: 5px;
+  margin-right: 20px;
+  color:$textGrey;
+}
+.box{
+  .cross-btn:before{
+    width: 14px;
+    height: 3px;
+    background-color: #a5a1b4;
+    transform: rotate(57deg);
+    content: '';
+    display: block;
+    left: 0px;
+    position: relative;
+    top: 5px;
+    border-radius: 4px;
+}
+}
+.box {
+  .cross-btn:after{
+    width: 14px;
+    height: 3px;
+    background-color: #a5a1b4;
+    transform: rotate(120deg);
+    content: '';
+    display: block;
+    right: 0px;
+    position: relative;
+    top: 2px;
+    border-radius: 4px;
+}
+}
+.purple-text{
+  color:$textPurple;
+  font-family: $myFont;
+}
+.grey-text{
+  color:$textGrey;
+  font-family: $myFont;
+  font-weight:normal;
+  font-size:34px;
+}
