@@ -1,13 +1,15 @@
-<mat-sidenav-container style="height: calc(100vh - 20px)" >
+<mat-sidenav-container style="height: calc(100vh - 20px)">
 
 	<div class="basic-container">
 		<div class="vertical-center">
 
-			<mat-form-field appearance="fill">
-				<input matInput placeholder="Favorite food" value="Make Animation">  
-      </mat-form-field>
 
-				<div class="main-wrapper">
+
+			<div class="main-wrapper">
+
+				<mat-form-field appearance="fill">
+					<input matInput placeholder="Add your first task" [(ngModel)]="textValue" (keydown.enter)="onKeypress($event)">
+      </mat-form-field>
 					<h1 [@fadeOut]="'flyIn'" [ngClass]="hideLabel == true ? 'hp': 'lp' ">Add your first task</h1>
 
 					<h1 [@Leave]="'flyIn'" style="color:blue;">
@@ -25,7 +27,7 @@
 
 
 
-				</div>
+			</div>
 		</div>
 
 	</div>

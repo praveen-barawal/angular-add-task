@@ -8,7 +8,7 @@ import { AngularAnimation } from "../animation/animation";
   animations: [AngularAnimation]
 })
 export class AddTaskComponent {
-  @Input() inputText: string = "Make animation";
+  @Input() textValue: string;
   @Input() className: string;
   @ViewChild("tw") typewriterElement;
 
@@ -25,8 +25,14 @@ export class AddTaskComponent {
     });
 
     writer
-      .type(this.inputText)
+      .type('Make Animation')
       .rest(500)
       .start();
+  }
+
+  onKeypress()
+  {
+    debugger;
+    console.log(this.textValue);
   }
 }
