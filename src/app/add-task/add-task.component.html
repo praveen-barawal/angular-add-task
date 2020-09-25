@@ -1,31 +1,25 @@
 <mat-sidenav-container style="height: calc(100vh - 20px)">
-
 	<div class="basic-container">
 		<div class="vertical-center">
-
-
-
 			<div class="main-wrapper">
-
-				<mat-form-field appearance="fill">
-					<input matInput placeholder="Add your first task" [(ngModel)]="textValue" (keydown.enter)="onKeypress($event)">
-      </mat-form-field>
-					<h1 [@fadeOut]="'flyIn'" [ngClass]="hideLabel == true ? 'hp': 'lp' ">Add your first task</h1>
-
+				<div>
+					<h1 [@fadeOut]="'flyIn'" class="lp">Add your first task</h1>
+				</div>
+				<div>
+					<mat-form-field appearance="fill">
+						<input matInput placeholder="Add your first task" [(ngModel)]="textValue" (keydown.enter)="onKeypress($event)">
+        </mat-form-field>
+				</div>
+				<div>
+					<div class="box-purple"></div>
+					<span class="grey-text">Make Animation</span>
+				</div>
+				<div>
 					<h1 [@Leave]="'flyIn'" style="color:blue;">
-						<div class="box-purple"></div>
 						<div class="box"><span class="cross-btn"></span></div>
 						<span class="grey-text strike">Make Animation</span>
 					</h1>
-
-					<!-- <div class="beside"> 
-        </div> -->
-
-					<!-- <input class="tw" #tw type="text" /> -->
-
-					<h1 class="tw" #tw></h1>
-
-
+				</div>
 
 			</div>
 		</div>
