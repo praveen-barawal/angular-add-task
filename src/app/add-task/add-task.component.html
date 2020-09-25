@@ -3,14 +3,15 @@
 		<div class="vertical-center">
 			<div class="main-wrapper">
 
-				<div *ngIf="currentState=='open'">
+				<div *ngIf="currentState=='open'"  >
+          <button class="plus-button plus-button-text plus-button--large"></button>
 					<h1 [@fadeOut]="'flyIn'" class="lp">Add your first task</h1>
 				</div>
 
-				<div *ngIf="currentState=='inInputState'">
+				<div *ngIf="currentState=='inInputState'" >
 					<mat-form-field appearance="fill">
-						<button class="plus-button plus-button--large"></button>
-						<input matInput placeholder="Add your first task" [(ngModel)]="textValue" (keydown.enter)="onKeypress($event)">
+						<!--<button class="plus-button plus-button--large"></button>-->
+						<input matInput placeholder="" [(ngModel)]="textValue" (keydown.enter)="onKeypress($event)">
         </mat-form-field>
 				</div>
 
@@ -20,15 +21,15 @@
           class="example-margin"
           [(ngModel)]="isChecked">
           </mat-checkbox>
-          <span class="grey-text">Make Animation</span>
-        <span class="checkmark"></span>
+          <span class="purple-text big-text">Make animation</span>
+        <span class="checkmark purple-box"></span>
        </label>
 				
 				</div>
 				<div *ngIf="currentState=='closed'">
-					<h1 [@Leave]="'flyIn'" style="color:blue;">
+					<h1 style="color:blue;">
 						<div class="box"><span class="cross-btn"></span></div>
-						<span class="grey-text strike">Make Animation</span>
+						<h1 class="grey-text strike">Make Animation</h1>
 					</h1>
 				</div>
 

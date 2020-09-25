@@ -6,11 +6,11 @@ $textPurple:#5d5581;
 .hp {
   opacity : 0;
   display:none;
-  color:#5d5581;
+  color:#a5a1b4;
   font-family: $myFont;
 }
 .lp{
-  color:#5d5581;
+  color:#a5a1b4;;
   font-family: $myFont;
 }
 .main-wrapper{
@@ -18,39 +18,97 @@ $textPurple:#5d5581;
   width:99%;
   text-align:center;
   margin:0 auto;
-  top:45%;
+  top:40%;
 }
 .main-wrapper h1{
   width:100%;
+  font-weight:normal;
+  margin:0px;
 }
 .strike{
   text-decoration: line-through;
 }
+
+.box-purple{
+  width:13px;
+  height:13px;
+  border:3px solid $textPurple;
+  border-radius:4px;
+  display:inline-block;
+  padding: 5px;
+  margin-right: 20px;
+  color:$textPurple;
+}
+.box {
+  width:16px;
+  height:16px;
+  vertical-align: text-bottom;
+  border:3px solid $textGrey;
+  border-radius:4px;
+  display:inline-block;
+  padding: 5px;
+  margin-right: 20px;
+  color:$textGrey;
+}
+.box{
+  .cross-btn:before{
+    width: 14px;
+    height: 3px;
+    background-color: #a5a1b4;
+    transform: rotate(57deg);
+    content: '';
+    display: block;
+    left: 0px;
+    position: relative;
+    top: 6px;
+    border-radius: 4px;
+}
+}
+.box {
+  .cross-btn:after{
+    width: 14px;
+    height: 3px;
+    background-color: #a5a1b4;
+    transform: rotate(120deg);
+    content: '';
+    display: block;
+    right: 0px;
+    position: relative;
+    top: 3px;
+    border-radius: 4px;
+}
+}
+
 .purple-text{
   color:$textPurple;
   font-family: $myFont;
+}
+.big-text{
+  font-weight:normal;
+  font-size:34px;
+  margin-left:30px;
 }
 .grey-text{
   color:$textGrey;
   font-family: $myFont;
   font-weight:normal;
   font-size:34px;
+  display:inline;
 }
-
 
 .main-wrapper .mat-form-field-infix{
   width: 392px;
-  padding: 16px 46px;
   
 }
 .main-wrapper .mat-input-element{
   border: none;
    background-color: #F0F3F0;
   font-family: $myFont;
-  color:$textGrey;
+  color:$textPurple;
   width:90%;
-  padding: 15px 37px;
+  padding: 6px 45px;
   border-radius: 16px;
+  font-size: 29px;
 }
 .main-wrapper .mat-input-element:focus{
   background-color: transparent;
@@ -65,7 +123,8 @@ $textPurple:#5d5581;
   display: inline-block;
   position: absolute;
   left: 40px;
-  top: 12px;
+  top: 17px;
+  outline:none;
 	
 	&:after,
 	&:before {
@@ -93,7 +152,10 @@ $textPurple:#5d5581;
 .plus-button--large {
 	font-size: 21px;
 }
-
+.plus-button-text {
+  left: 35%;
+  top: 19px;
+}
 /* custom checkbox css starts */
 .container {
   display: block;
@@ -116,12 +178,15 @@ $textPurple:#5d5581;
 }
 .checkmark {
   position: absolute;
-  top: -57px;
-  left: 32%;
+  top: 9px;
+  left: 38%;
   height: 27px;
   width: 27px;
   border: 3px solid #a5a1b4;
   border-radius: 4px;
+}
+.purple-box{
+  border: 3px solid $textPurple;
 }
 .container input:checked ~ .checkmark {
   background-color: transparent;

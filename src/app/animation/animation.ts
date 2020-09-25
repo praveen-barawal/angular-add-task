@@ -27,25 +27,25 @@ export const AngularAnimation = [
     state(
       "open",
       style({
-        backgroundColor: "yellow"
+        color: "#a5a1b4"
       })
     ),
     state(
       "inInputState",
       style({
-        backgroundColor: "orange"
+        
       })
     ),
      state(
       "inChkboxState",
       style({
-        backgroundColor: "orange"
+        
       })
     ),
     state(
       "closed",
       style({
-        backgroundColor: "green"
+        
       })
     ),
     transition("open => inInputState", [animate("1s")]),
