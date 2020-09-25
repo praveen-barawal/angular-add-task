@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, Input, OnInit, Renderer2, ViewChild, ElementRef } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
 import { AngularAnimation } from "../animation/animation";
 
 @Component({
@@ -6,16 +7,30 @@ import { AngularAnimation } from "../animation/animation";
   templateUrl: "./add-task.component.html",
   animations: [AngularAnimation]
 })
-export class AddTaskComponent {
+
+
+export class AddTaskComponent implements OnInit {
   @Input() textValue: string;
   @Input() className: string;
   show:boolean = true;
   hideLabel:boolean = false;
   currentState:string="open";
   isChecked:boolean = false;
+  form: FormGroup;
 
   ngOnInit() {
-     setTimeout(() => (this.currentState = "inInputState"), 2000);
+     this.form = new FormGroup({
+      myInput: new FormControl('praveen')
+    });
+  }
+
+  @ViewChild("name",{static:false}) nameField: ElementRef;
+
+  onClickAddTask()
+  {
+    debugger;
+    this.currentState ="inInputState";
+     this.nameField.nativeElement.focus();
   }
 
   onKeypress()

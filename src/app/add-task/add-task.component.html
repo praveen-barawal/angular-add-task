@@ -2,21 +2,21 @@
 	<div class="basic-container">
 		<div class="vertical-center">
 			<div class="main-wrapper">
+				<form [formGroup]="form">
+					<div *ngIf="currentState=='open'">
+						<button class="plus-button plus-button-text plus-button--large"></button>
+						<h1 [@fadeOut]="'flyIn'" (click)="onClickAddTask()" class="lp">Add your first task</h1>
+					</div>
 
-				<div *ngIf="currentState=='open'"  >
-          <button class="plus-button plus-button-text plus-button--large"></button>
-					<h1 [@fadeOut]="'flyIn'" class="lp">Add your first task</h1>
-				</div>
-
-				<div *ngIf="currentState=='inInputState'" >
-					<mat-form-field appearance="fill">
-						<!--<button class="plus-button plus-button--large"></button>-->
-						<input matInput placeholder="" [(ngModel)]="textValue" (keydown.enter)="onKeypress($event)">
+					<div *ngIf="currentState=='inInputState'">
+						<mat-form-field appearance="fill">
+							<input #name matInput formControlName="myInput"
+           (keydown.enter)="onKeypress($event)">
         </mat-form-field>
-				</div>
+					</div>
 
-				<div *ngIf="currentState=='inChkboxState'">
-					<label class="container">
+					<div *ngIf="currentState=='inChkboxState'">
+						<label class="container">
          <mat-checkbox style="display:none" (change)="onCheckBoxChange()"
           class="example-margin"
           [(ngModel)]="isChecked">
@@ -24,15 +24,15 @@
           <span class="purple-text big-text">Make animation</span>
         <span class="checkmark purple-box"></span>
        </label>
-				
-				</div>
-				<div *ngIf="currentState=='closed'">
-					<h1 style="color:blue;">
-						<div class="box"><span class="cross-btn"></span></div>
-						<h1 class="grey-text strike">Make Animation</h1>
-					</h1>
-				</div>
 
+					</div>
+					<div *ngIf="currentState=='closed'">
+						<h1 style="color:blue;">
+							<div class="box"><span class="cross-btn"></span></div>
+							<h1 class="grey-text strike">Make Animation</h1>
+						</h1>
+					</div>
+				</form>
 			</div>
 		</div>
 
