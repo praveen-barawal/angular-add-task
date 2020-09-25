@@ -26,54 +26,6 @@ $textPurple:#5d5581;
 .strike{
   text-decoration: line-through;
 }
-.box-purple{
-  width:13px;
-  height:13px;
-  border:3px solid $textPurple;
-  border-radius:4px;
-  display:inline-block;
-  padding: 5px;
-  margin-right: 20px;
-  color:$textPurple;
-}
-.box {
-  width:13px;
-  height:13px;
-  border:3px solid $textGrey;
-  border-radius:4px;
-  display:inline-block;
-  padding: 5px;
-  margin-right: 20px;
-  color:$textGrey;
-}
-.box{
-  .cross-btn:before{
-    width: 14px;
-    height: 3px;
-    background-color: #a5a1b4;
-    transform: rotate(57deg);
-    content: '';
-    display: block;
-    left: 0px;
-    position: relative;
-    top: 5px;
-    border-radius: 4px;
-}
-}
-.box {
-  .cross-btn:after{
-    width: 14px;
-    height: 3px;
-    background-color: #a5a1b4;
-    transform: rotate(120deg);
-    content: '';
-    display: block;
-    right: 0px;
-    position: relative;
-    top: 2px;
-    border-radius: 4px;
-}
-}
 .purple-text{
   color:$textPurple;
   font-family: $myFont;
@@ -83,4 +35,127 @@ $textPurple:#5d5581;
   font-family: $myFont;
   font-weight:normal;
   font-size:34px;
+}
+
+
+.main-wrapper .mat-form-field-infix{
+  width: 392px;
+  padding: 16px 46px;
+  
+}
+.main-wrapper .mat-input-element{
+  border: none;
+   background-color: #F0F3F0;
+  font-family: $myFont;
+  color:$textGrey;
+  width:90%;
+  padding: 15px 37px;
+  border-radius: 16px;
+}
+.main-wrapper .mat-input-element:focus{
+  background-color: transparent;
+}
+.plus-button {
+	border: none;
+  background-color: transparent;
+	font-size: 16px;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 999px;
+  display: inline-block;
+  position: absolute;
+  left: 40px;
+  top: 12px;
+	
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		background-color: #5d5581;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	&:before {
+		height: 1em;
+		width: 0.2em;
+    border-radius:4px;
+	}
+
+	&:after {
+		height: 4px;
+		width: 22px;
+    border-radius:4px;
+	}
+}
+.plus-button--large {
+	font-size: 21px;
+}
+
+/* custom checkbox css starts */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: -57px;
+  left: 32%;
+  height: 27px;
+  width: 27px;
+  border: 3px solid #a5a1b4;
+  border-radius: 4px;
+}
+.container input:checked ~ .checkmark {
+  background-color: transparent;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after,
+.container input:checked ~ .checkmark:before {
+  display: block;
+}
+.container .checkmark:after {
+  width: 16px;
+    height: 3px;
+    background-color: #a5a1b4;
+    transform: rotate(120deg);
+    content: '';
+    display: none;
+    right: -4px;
+    position: relative;
+    top: 8px;
+    border-radius: 4px;
+}
+.container .checkmark:before {
+  width: 16px;
+    height: 3px;
+    background-color: #a5a1b4;
+    transform: rotate(57deg);
+    content: '';
+    display: none;
+    left: 5px;
+    position: relative;
+    top: 11px;
+    border-radius: 4px;
 }
