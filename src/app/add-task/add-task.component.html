@@ -7,13 +7,21 @@
 				</div>
 				<div *ngIf="currentState=='inInputState'">
 					<mat-form-field appearance="fill">
-            	<button class="plus-button plus-button--large"></button>
+						<button class="plus-button plus-button--large"></button>
 						<input matInput placeholder="Add your first task" [(ngModel)]="textValue" (keydown.enter)="onKeypress($event)">
         </mat-form-field>
 				</div>
 				<div *ngIf="currentState=='inChkboxState'">
-					<div class="box-purple"></div>
-					<span class="grey-text">Make Animation</span>
+				
+         <mat-checkbox (change)="onCheckBoxChange()"
+          class="example-margin"
+          [(ngModel)]="isChecked">
+          	<span class="grey-text">Make Animation</span>
+      </mat-checkbox>
+      	<!-- <label class="container">
+        <span class="checkmark"></span>
+       </label> -->
+				
 				</div>
 				<div *ngIf="currentState=='closed'">
 					<h1 [@Leave]="'flyIn'" style="color:blue;">

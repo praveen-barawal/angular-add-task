@@ -11,14 +11,23 @@ export class AddTaskComponent {
   @Input() className: string;
   show:boolean = true;
   hideLabel:boolean = false;
-  currentState:string="open";
+  currentState:string="inChkboxState";
+  isChecked:boolean = false;
 
   ngOnInit() {
+    // setTimeout(() => (this.currentState = "inInputState"), 2000);
   }
 
   onKeypress()
   {
-    debugger;
+    this.currentState ="inChkboxState";
     console.log(this.textValue);
+  }
+
+  onCheckBoxChange()
+  {
+    if(this.isChecked){
+       this.currentState ="closed";
+    }
   }
 }
