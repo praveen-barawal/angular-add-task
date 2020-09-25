@@ -31,7 +31,13 @@ export const AngularAnimation = [
       })
     ),
     state(
-      "inProgress",
+      "inInputState",
+      style({
+        backgroundColor: "orange"
+      })
+    ),
+     state(
+      "inChkboxState",
       style({
         backgroundColor: "orange"
       })
@@ -42,9 +48,10 @@ export const AngularAnimation = [
         backgroundColor: "green"
       })
     ),
-    transition("open => closed", [animate("1s")]),
-    transition("closed => open", [animate("0.5s")]),
-    transition("closed <=> inProgress", [animate("4s")]),
-    transition("open <=> inProgress", [animate("4s")])
+    transition("open => inInputState", [animate("1s")]),
+    transition("inInputState => inChkboxState", [animate("0.5s")]),
+    transition("inInputState => closed", [animate("0.5s")]),
+    transition("closed <=> inInputState", [animate("4s")]),
+    transition("open <=> inInputState", [animate("4s")])
   ])
 ];
