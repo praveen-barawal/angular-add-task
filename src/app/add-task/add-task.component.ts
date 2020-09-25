@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, Input, OnInit, Renderer2, ViewChild, ElementRef } from "@angular/core";
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnInit,
+  Renderer2,
+  ViewChild,
+  ElementRef, ChangeDetectorRef
+} from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { AngularAnimation } from "../animation/animation";
 
@@ -7,42 +15,35 @@ import { AngularAnimation } from "../animation/animation";
   templateUrl: "./add-task.component.html",
   animations: [AngularAnimation]
 })
-
-
 export class AddTaskComponent implements OnInit {
   @Input() textValue: string;
   @Input() className: string;
-  show:boolean = true;
-  hideLabel:boolean = false;
-  currentState:string="open";
-  isChecked:boolean = false;
+  show: boolean = true;
+  hideLabel: boolean = false;
+  currentState: string = "open";
+  isChecked: boolean = false;
   form: FormGroup;
 
+  constructor(private changeDetector : ChangeDetectorRef) {}
+
   ngOnInit() {
-     this.form = new FormGroup({
-      myInput: new FormControl('praveen')
-    });
   }
 
-  @ViewChild("name",{static:false}) nameField: ElementRef;
-
-  onClickAddTask()
-  {
-    debugger;
-    this.currentState ="inInputState";
-     this.nameField.nativeElement.focus();
+  @ViewChild("myText",{static:false}) nameField: ElementRef;
+  onClickAddTask() {
+    this.currentState = "inInputState";
+    this.changeDetector.detectChanges();
+    this.nameField.nativeElement.focus();
   }
 
-  onKeypress()
-  {
-    this.currentState ="inChkboxState";
+  onKeypress() {
+    this.currentState = "inChkboxState";
     console.log(this.textValue);
   }
 
-  onCheckBoxChange()
-  {
-    if(this.isChecked){
-       this.currentState ="closed";
+  onCheckBoxChange() {
+    if (this.isChecked) {
+      this.currentState = "closed";
     }
   }
 }

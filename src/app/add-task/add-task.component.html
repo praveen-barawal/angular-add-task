@@ -10,7 +10,7 @@
 
 					<div *ngIf="currentState=='inInputState'">
 						<mat-form-field appearance="fill">
-							<input #name matInput formControlName="myInput"
+							<input #myText matInput 
            (keydown.enter)="onKeypress($event)">
         </mat-form-field>
 					</div>
