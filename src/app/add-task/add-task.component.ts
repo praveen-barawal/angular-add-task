@@ -8,17 +8,15 @@ import { AngularAnimation } from "../animation/animation";
   animations: [AngularAnimation]
 })
 export class AddTaskComponent {
-  @Input() isChecked: boolean;
+  @Input() inputText: string = "Make animation";
   @Input() className: string;
   @ViewChild("tw") typewriterElement;
-  @ViewChild("tw2") typewriterElement2;
-  @ViewChild("tw3") typewriterElement3;
 
   show = true;
   hideLabel = false;
 
   ngOnInit() {
-    setTimeout(() => (this.hideLabel = true), 1000);
+    //setTimeout(() => (this.hideLabel = true), 1000);
 
     const target = this.typewriterElement.nativeElement;
     const writer = new Typewriter(target, {
@@ -27,7 +25,7 @@ export class AddTaskComponent {
     });
 
     writer
-      .type(`Make animation`)
+      .type(this.inputText)
       .rest(500)
       .start();
   }
