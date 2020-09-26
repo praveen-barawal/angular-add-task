@@ -3,23 +3,22 @@
 		<div class="vertical-center">
 			<div class="main-wrapper">
 
-				<div [@openClose]="currentState" >
+				<div [@openClose]="currentState" *ngIf="currentState=='open'">
 					<button class="plus-button plus-button-text plus-button--large"></button>
 					<h1 [@fadeOut] (click)="onClickAddTask()" class="lp">Add your first task</h1>
 				</div>
 
-				<div [@openClose]="currentState" >
+				<div [@openClose]="currentState" *ngIf="currentState=='inInputState'">
 					<mat-form-field appearance="fill">
-						<input #myText matInput [(ngModel)]="inputTag"placeholder="Add your first task"
+						<input #myText matInput [(ngModel)]="inputTag" placeholder="Add your first task"
            (keydown.enter)="onKeypress($event)"  >
-           
         </mat-form-field>
 				</div>
 
-				<div [@openClose]="currentState"  >
+				<div [@openClose]="currentState"  *ngIf="currentState=='inChkboxState'">
 					<label class="container">
          <mat-checkbox style="display:none" (change)="onCheckBoxChange()"
-          class="example-margin" 
+          class="example-margin"
           [(ngModel)]="isChecked">
           </mat-checkbox>
           <span class="purple-text big-text">{{inputTag}}</span>
@@ -27,7 +26,7 @@
        </label>
 
 				</div>
-				<div [@openClose]="currentState" >
+				<div [@openClose]="currentState" *ngIf="currentState=='closed'">
 					<h1 style="color:blue;">
 						<div class="box"><span class="cross-btn"></span></div>
 						<h1 class="grey-text strike">{{inputTag}}</h1>
