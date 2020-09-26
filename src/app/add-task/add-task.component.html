@@ -10,7 +10,7 @@
 
 				<div [@openClose]="currentState" *ngIf="currentState=='inInputState'">
 					<mat-form-field appearance="fill">
-						<input #myText matInput [(ngModel)]="inputTag"
+						<input #myText matInput [(ngModel)]="inputTag" (mouseout)="focuslost()" (mouseover)="focus()"
            (keydown.enter)="onKeypress($event)"  >
         </mat-form-field>
 				</div>

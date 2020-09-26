@@ -40,9 +40,8 @@ $textPurple:#5d5581;
   color:$textPurple;
 }
 .box {
-  width:16px;
-  height:16px;
-  vertical-align: text-bottom;
+  width:19px;
+  height:19px;
   border:3px solid $textGrey;
   border-radius:4px;
   display:inline-block;
@@ -58,9 +57,9 @@ $textPurple:#5d5581;
     transform: rotate(57deg);
     content: '';
     display: block;
-    left: 0px;
+    left: 2px;
     position: relative;
-    top: 6px;
+    top: 8px;
     border-radius: 4px;
 }
 }
@@ -72,9 +71,9 @@ $textPurple:#5d5581;
     transform: rotate(120deg);
     content: '';
     display: block;
-    right: 0px;
+    right: -2px;
     position: relative;
-    top: 3px;
+    top: 5px;
     border-radius: 4px;
 }
 }
@@ -105,7 +104,7 @@ $textPurple:#5d5581;
    background-color: #F0F3F0;
   font-family: $myFont;
   color:$textPurple;
-  width:90%;
+  width:85%;
   padding: 6px 45px;
   border-radius: 16px;
   font-size: 29px;
@@ -150,12 +149,11 @@ $textPurple:#5d5581;
 	}
 }
 .plus-button--large {
-	font-size: 23px;
+	font-size: 21px;
 }
 .plus-button-text {
-  left: 35%;
-  //top: 19px;
-  top:-12px;
+  left: 33%;
+  top: 0px;
 }
 /* custom checkbox css starts */
 .container {
@@ -179,8 +177,8 @@ $textPurple:#5d5581;
 }
 .checkmark {
   position: absolute;
-  top: 7px;
-  left: 38%;
+  top: 9px;
+  left: 43.5%;
   height: 27px;
   width: 27px;
   border: 3px solid #a5a1b4;
@@ -225,4 +223,3 @@ $textPurple:#5d5581;
     top: 11px;
     border-radius: 4px;
 }
-

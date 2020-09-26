@@ -48,4 +48,14 @@ export class AddTaskComponent implements OnInit {
       this.currentState = "closed";
     }
   }
+
+  focuslost()
+  {
+
+  }
+
+  focus()
+  {
+    
+  }
 }
