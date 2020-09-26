@@ -2,21 +2,21 @@
 	<div class="basic-container">
 		<div class="vertical-center">
 			<div class="main-wrapper">
-			
-					<div *ngIf="currentState=='open'">
-						<button class="plus-button plus-button-text plus-button--large"></button>
-						<h1 [@fadeOut]="'flyIn'" (click)="onClickAddTask()" class="lp">Add your first task</h1>
-					</div>
 
-					<div *ngIf="currentState=='inInputState'">
-						<mat-form-field appearance="fill">
-							<input #myText matInput [(ngModel)]="inputTag"
-           (keydown.enter)="onKeypress($event)">
+				<div *ngIf="currentState=='open'">
+					<button class="plus-button plus-button-text plus-button--large"></button>
+					<h1 [@fadeOut] (click)="onClickAddTask()" class="lp">Add your first task</h1>
+				</div>
+
+				<div *ngIf="currentState=='inInputState'">
+					<mat-form-field appearance="fill">
+						<input #myText matInput [(ngModel)]="inputTag"
+           (keydown.enter)="onKeypress($event)"  placeholder="Add your first task">
         </mat-form-field>
-					</div>
+				</div>
 
-					<div *ngIf="currentState=='inChkboxState'">
-						<label class="container">
+				<div *ngIf="currentState=='inChkboxState'">
+					<label class="container">
          <mat-checkbox style="display:none" (change)="onCheckBoxChange()"
           class="example-margin"
           [(ngModel)]="isChecked">
@@ -25,14 +25,14 @@
         <span class="checkmark purple-box"></span>
        </label>
 
-					</div>
-					<div *ngIf="currentState=='closed'">
-						<h1 style="color:blue;">
-							<div class="box"><span class="cross-btn"></span></div>
-							<h1 class="grey-text strike">{{inputTag}}</h1>
-						</h1>
-					</div>
-				
+				</div>
+				<div *ngIf="currentState=='closed'">
+					<h1 style="color:blue;">
+						<div class="box"><span class="cross-btn"></span></div>
+						<h1 class="grey-text strike">{{inputTag}}</h1>
+					</h1>
+				</div>
+
 			</div>
 		</div>
 
