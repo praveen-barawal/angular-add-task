@@ -21,11 +21,14 @@ export class AddTaskComponent implements OnInit {
   hideLabel: boolean = false;
   currentState: string = "open";
   isChecked: boolean = false;
+  isInputOpen: boolean = true;
+  isChkBoxOpen: boolean = false;
 
   constructor(private changeDetector : ChangeDetectorRef) {}
 
   ngOnInit() {
     console.log(this.inputTag);
+    this.inputTag = "Make Animation";
   }
 
   @ViewChild("myText",{static:false}) nameField: ElementRef;
@@ -46,16 +49,17 @@ export class AddTaskComponent implements OnInit {
   onCheckBoxChange() {
     if (this.isChecked) {
       this.currentState = "closed";
+      this.isChkBoxOpen = true;
     }
   }
 
-  focuslost()
+  focusOut()
   {
-
+   // this.isInputOpen = true;
   }
 
   focus()
   {
-    
+    //this.isInputOpen = false;
   }
 }

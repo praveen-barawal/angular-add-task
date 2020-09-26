@@ -11,7 +11,7 @@
 				<div [@openClose]="currentState" *ngIf="currentState=='inInputState'">
 					<mat-form-field appearance="fill">
 						<input #myText matInput [(ngModel)]="inputTag" placeholder="Add your first task"
-           (keydown.enter)="onKeypress($event)"  >
+           (keydown.enter)="onKeypress($event)" (focus)="focus()" (focusout)="focusOut()" >
         </mat-form-field>
 				</div>
 
@@ -21,15 +21,15 @@
           class="example-margin"
           [(ngModel)]="isChecked">
           </mat-checkbox>
-          <span class="purple-text big-text">{{inputTag}}</span>
+          <span [@chkboxOpenClose]="isChkBoxOpen? 'open' : 'closed'" class="purple-text big-text">{{inputTag}}</span>
         <span class="checkmark purple-box"></span>
        </label>
 
 				</div>
 				<div [@openClose]="currentState" *ngIf="currentState=='closed'">
 					<h1 style="color:blue;">
-						<div class="box"><span class="cross-btn"></span></div>
-						<h1 class="grey-text strike">{{inputTag}}</h1>
+						<div  class="box"><span class="cross-btn"></span></div>
+						<h1 [@strikeOpenClose]="isInputOpen? 'inputOpen' : 'inputClosed'" class="grey-text strike">{{inputTag}}</h1>
 					</h1>
 				</div>
 

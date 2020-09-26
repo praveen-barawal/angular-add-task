@@ -25,6 +25,39 @@ export const AngularAnimation = [
     ])
   ]),
 
+  trigger("strikeOpenClose", [
+    state(
+      "inputOpen",
+      style({
+       textDecoration: "none",
+       
+      })
+    ),
+    state(
+      "inputClosed",
+      style({
+       textDecoration: "line-through",
+      })
+    ),
+    transition("* => *", [animate(".2s")])
+  ]),
+
+  trigger("chkboxOpenClose", [
+    state(
+      "open",
+      style({
+        backgroundColor: "rgb(153 195 151 / 6%)",
+      })
+    ),
+    state(
+      "closed",
+      style({
+       backgroundColor: "white",
+      })
+    ),
+    transition("* => *", [animate("3s")])
+  ]),
+
   trigger("openClose", [
     state(
       "open",
@@ -32,28 +65,8 @@ export const AngularAnimation = [
         color: "#a5a1b4"
       })
     ),
-    state(
-      "inInputState",
-      style({
-        
-      })
-    ),
-     state(
-      "inChkboxState",
-      style({
-        
-      })
-    ),
-    state(
-      "closed",
-      style({
-        
-      })
-    ),
-    transition("open => inInputState", [animate("1s")]),
-    transition("inInputState => inChkboxState", [animate("0.5s")]),
-    transition("inChkboxState => closed", [animate("0.5s")]),
-    transition("closed <=> inInputState", [animate("4s")]),
-    transition("open <=> inInputState", [animate("4s")])
+    state("inInputState", style({})),
+    state("inChkboxState", style({})),
+    state("closed", style({})),
   ])
 ];
