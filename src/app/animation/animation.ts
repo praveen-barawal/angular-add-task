@@ -16,6 +16,7 @@ export const AngularAnimation = [
     ),
     transition(":leave", animate(600, style({ opacity: 2 })))
   ]),
+
   trigger("Leave", [
     state("flyIn", style({ transform: "translateX(0)" })),
     transition(":enter", [
@@ -23,6 +24,7 @@ export const AngularAnimation = [
       animate("2s 100ms ease-in")
     ])
   ]),
+
   trigger("openClose", [
     state(
       "open",
@@ -50,7 +52,7 @@ export const AngularAnimation = [
     ),
     transition("open => inInputState", [animate("1s")]),
     transition("inInputState => inChkboxState", [animate("0.5s")]),
-    transition("inInputState => closed", [animate("0.5s")]),
+    transition("inChkboxState => closed", [animate("0.5s")]),
     transition("closed <=> inInputState", [animate("4s")]),
     transition("open <=> inInputState", [animate("4s")])
   ])
