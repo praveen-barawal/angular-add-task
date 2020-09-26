@@ -24,6 +24,13 @@ $textPurple:#5d5581;
   width:100%;
   font-weight:normal;
   margin:0px;
+  font-size:35px;
+  vertical-align: bottom;
+}
+h1.lp,
+h1.hp{
+  width: 80% !important;
+  padding-left: 13% !important;
 }
 .strike{
   text-decoration: line-through;
@@ -47,6 +54,7 @@ $textPurple:#5d5581;
   display:inline-block;
   padding: 5px;
   margin-right: 20px;
+  margin-left: 37px;
   color:$textGrey;
 }
 .box{
@@ -84,8 +92,8 @@ $textPurple:#5d5581;
 }
 .big-text{
   font-weight:normal;
-  font-size:34px;
-  margin-left:30px;
+  font-size:35px;
+  margin-left:40px;
 }
 .grey-text{
   color:$textGrey;
@@ -105,9 +113,10 @@ $textPurple:#5d5581;
   font-family: $myFont;
   color:$textPurple;
   width:85%;
-  padding: 6px 45px;
+  padding: 6px 57px;
   border-radius: 16px;
-  font-size: 29px;
+  font-size: 35px;
+  margin-left:22px;
 }
 .main-wrapper .mat-input-element:focus{
   background-color: transparent;
@@ -137,14 +146,14 @@ $textPurple:#5d5581;
 	}
 	
 	&:before {
-		height: 1em;
+		height: 1.5em;
 		width: 0.2em;
     border-radius:4px;
 	}
 
 	&:after {
 		height: 4px;
-		width: 22px;
+		width: 31px;
     border-radius:4px;
 	}
 }
@@ -152,7 +161,7 @@ $textPurple:#5d5581;
 	font-size: 21px;
 }
 .plus-button-text {
-  left: 33%;
+  left: 37%;
   top: 0px;
 }
 /* custom checkbox css starts */
@@ -167,6 +176,9 @@ $textPurple:#5d5581;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-left: auto;
+  max-width: 815px;
+  text-align:left;
 }
 .container input {
   position: absolute;
@@ -178,7 +190,7 @@ $textPurple:#5d5581;
 .checkmark {
   position: absolute;
   top: 9px;
-  left: 43.5%;
+  left: 3%;
   height: 27px;
   width: 27px;
   border: 3px solid #a5a1b4;
