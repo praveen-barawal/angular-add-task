@@ -22,11 +22,15 @@ export class AddTaskComponent implements OnInit {
   hideLabel: boolean = false;
   currentState: string = "open";
   isChecked: boolean = false;
-  form: FormGroup;
+  //form: FormGroup;
+  inputTag:string;
 
   constructor(private changeDetector : ChangeDetectorRef) {}
 
   ngOnInit() {
+    //  this.form = new FormGroup({
+    //   myInput: new FormControl('')
+    // });
   }
 
   @ViewChild("myText",{static:false}) nameField: ElementRef;
@@ -36,9 +40,12 @@ export class AddTaskComponent implements OnInit {
     this.nameField.nativeElement.focus();
   }
 
-  onKeypress() {
+  onKeypress($event) {
+    debugger;
     this.currentState = "inChkboxState";
-    console.log(this.textValue);
+    this.inputTag = $event.currentTarget.value;
+    console.log($event.currentTarget.value)
+    
   }
 
   onCheckBoxChange() {
