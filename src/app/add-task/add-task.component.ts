@@ -16,21 +16,16 @@ import { AngularAnimation } from "../animation/animation";
   animations: [AngularAnimation]
 })
 export class AddTaskComponent implements OnInit {
-  @Input() textValue: string;
-  @Input() className: string;
+  @Input() inputTag: string;
   show: boolean = true;
   hideLabel: boolean = false;
   currentState: string = "open";
   isChecked: boolean = false;
-  //form: FormGroup;
-  inputTag:string;
 
   constructor(private changeDetector : ChangeDetectorRef) {}
 
   ngOnInit() {
-    //  this.form = new FormGroup({
-    //   myInput: new FormControl('')
-    // });
+    console.log(this.inputTag);
   }
 
   @ViewChild("myText",{static:false}) nameField: ElementRef;

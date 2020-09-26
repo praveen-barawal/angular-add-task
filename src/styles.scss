@@ -150,11 +150,12 @@ $textPurple:#5d5581;
 	}
 }
 .plus-button--large {
-	font-size: 21px;
+	font-size: 23px;
 }
 .plus-button-text {
   left: 35%;
-  top: 19px;
+  //top: 19px;
+  top:-12px;
 }
 /* custom checkbox css starts */
 .container {
@@ -178,7 +179,7 @@ $textPurple:#5d5581;
 }
 .checkmark {
   position: absolute;
-  top: 9px;
+  top: 7px;
   left: 38%;
   height: 27px;
   width: 27px;
